@@ -74,6 +74,8 @@ bash scripts/shell/train_extend_rawbase_all_exps.sh
 
 
 
+
+
 ## Final Model
 
 The final CARP model is the 150M-parameter ESM-2 backbone trained jointly on classification and regression (λ = 0.25, seven negatives per positive), with the *S. aureus* regression head added on the frozen backbone. The commands below train it for the five standard seeds.
@@ -126,3 +128,11 @@ done
 
 
 ## How to use
+
+The data and the final model (`carp_seed0.pt`) are deposited in Zenodo ([10.5281/zenodo.23226520](https://doi.org/10.5281/zenodo.23226520)). Unzip `dataset.zip` in the repository root, then predict from the repository root:
+
+```bash
+python3 scripts/predict.py --ckpt carp_seed0.pt --fasta peptides.fasta --out predictions.csv
+```
+
+The output has one row per sequence (`seq_id`, `seq`, `cls_prob`, `cls_label`, `EC_pMIC`, `EC_MIC(uM)`, `SA_pMIC`, `SA_MIC(uM)`). `cls_prob` is the AMP probability and `cls_label` is `pos` when it is at least 0.5 and `neg` otherwise. pMIC = −log10(MIC in µM). Rows are written batch by batch, so large FASTA files are fine. If a run is interrupted, add `--resume` to continue it.
