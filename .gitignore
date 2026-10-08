@@ -1,0 +1,19 @@
+# ---- Large / generated (download data and checkpoints from Zenodo) ----
+checkpoints/
+dataset/
+figure/
+
+# ---- Train-time caches & experiment logs (regenerated) ----
+cache/
+wandb/
+*.pt
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# ---- OS / Office ----
+.DS_Store
+~$*

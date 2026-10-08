@@ -1,0 +1,132 @@
+{
+  "args": {
+    "base_ckpt": "checkpoints/03-joint-classreg/joint_esm2_t30_150M_UR50D_Ecoli_length_matched_r7_lam0.25_seed42_reg_bestval.pt",
+    "base_organism": "E. coli",
+    "new_organism": "S. aureus",
+    "n_sub": 200,
+    "esm_name": "facebook/esm2_t30_150M_UR50D",
+    "strategy": "length_matched",
+    "neg_pos_ratio": 1.0,
+    "max_len": 64,
+    "batch_size": 16,
+    "epochs": 60,
+    "head_lr": 0.0001,
+    "weight_decay": 0.003,
+    "dropout": 0.2,
+    "grad_clip": 1.0,
+    "val_frac": 0.1,
+    "seed": 42,
+    "out": "extend_Saureus_lam0.25_reg_bestval_n200_seed42.json",
+    "save_ckpt": false,
+    "wandb": false,
+    "wandb_project": "CARP",
+    "wandb_name": null,
+    "wandb_mode": "online"
+  },
+  "result": {
+    "new_organism": {
+      "organism": "S. aureus",
+      "n_sub": 200,
+      "n_train": 180,
+      "best_val": {
+        "mse": 0.24405074279642544,
+        "rmse": 0.49401492163337074,
+        "r2": 0.5000845309096122,
+        "pcc": 0.7270137758464189,
+        "ktc": 0.6105263157894737,
+        "spearman": 0.7924812030075187,
+        "n": 20,
+        "top10_overlap": 0.8,
+        "ndcg10": 0.8804862139620137,
+        "epoch": 4
+      },
+      "test": {
+        "mse": 0.46603739855951637,
+        "rmse": 0.6826693186012657,
+        "r2": 0.353554006680184,
+        "pcc": 0.5959265841781486,
+        "ktc": 0.40885323398893625,
+        "spearman": 0.569249140393604,
+        "n": 328,
+        "top10_overlap": 0.2,
+        "ndcg10": 0.6667419503712412,
+        "top50_overlap": 0.46,
+        "ndcg50": 0.793870591994303,
+        "top100_overlap": 0.55,
+        "ndcg100": 0.8341254044757526
+      }
+    },
+    "forgetting": {
+      "base_organism": "E. coli",
+      "reg_before": {
+        "mse": 0.29549091076785716,
+        "rmse": 0.5435907566983247,
+        "r2": 0.6010332226996242,
+        "pcc": 0.7800429165618743,
+        "ktc": 0.5561977903048846,
+        "spearman": 0.7296554795298139,
+        "n": 404,
+        "top10_overlap": 0.8,
+        "ndcg10": 0.9366823269301736,
+        "top50_overlap": 0.56,
+        "ndcg50": 0.9186229888188476,
+        "top100_overlap": 0.69,
+        "ndcg100": 0.9340391268235126
+      },
+      "reg_after": {
+        "mse": 0.29549091076785716,
+        "rmse": 0.5435907566983247,
+        "r2": 0.6010332226996242,
+        "pcc": 0.7800429165618743,
+        "ktc": 0.5561977903048846,
+        "spearman": 0.7296554795298139,
+        "n": 404,
+        "top10_overlap": 0.8,
+        "ndcg10": 0.9366823269301736,
+        "top50_overlap": 0.56,
+        "ndcg50": 0.9186229888188476,
+        "top100_overlap": 0.69,
+        "ndcg100": 0.9340391268235126
+      },
+      "cls_before": {
+        "auc": 0.978127144397608,
+        "aupr": 0.9840909034345322,
+        "f1": 0.918774966711052,
+        "precision": 0.9942363112391931,
+        "recall": 0.8539603960396039,
+        "mcc": 0.8575884433688188,
+        "acc": 0.9245049504950495,
+        "n": 808,
+        "prevalence": 0.5,
+        "p@50": 1.0,
+        "p@100": 1.0,
+        "p@200": 1.0,
+        "p@400": 0.945
+      },
+      "cls_after": {
+        "auc": 0.978127144397608,
+        "aupr": 0.9840909034345322,
+        "f1": 0.918774966711052,
+        "precision": 0.9942363112391931,
+        "recall": 0.8539603960396039,
+        "mcc": 0.8575884433688188,
+        "acc": 0.9245049504950495,
+        "n": 808,
+        "prevalence": 0.5,
+        "p@50": 1.0,
+        "p@100": 1.0,
+        "p@200": 1.0,
+        "p@400": 0.945
+      },
+      "delta_rmse": 0.0,
+      "delta_spearman": 0.0,
+      "delta_auc": 0.0
+    },
+    "base_load": {
+      "kind": "joint",
+      "organism": "E. coli",
+      "has_cls": true,
+      "loaded_backbone": 486
+    }
+  }
+}

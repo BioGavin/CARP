@@ -1,0 +1,56 @@
+{
+  "args": {
+    "organism": "S. aureus",
+    "model_name": "Rostlab/prot_bert",
+    "epochs": 100,
+    "batch_size": 12,
+    "lr": 1e-05,
+    "weight_decay": 0.003,
+    "dropout": 0.2,
+    "grad_clip": 1.0,
+    "max_len": 77,
+    "val_frac": 0.1,
+    "seed": 123,
+    "save_ckpt": false,
+    "out": "protbert_SA_seed123.json",
+    "wandb": false,
+    "wandb_project": "CARP",
+    "wandb_name": null
+  },
+  "result": {
+    "selected_by": "val/mse",
+    "best_val": {
+      "mse": 0.27871745803216386,
+      "rmse": 0.5279369830123325,
+      "r2": 0.5762967110373335,
+      "pcc": 0.7627343345604551,
+      "ktc": 0.5520545320610781,
+      "spearman": 0.7279234799448454,
+      "n": 295,
+      "epoch": 74
+    },
+    "test_at_best_val": {
+      "mse": 0.3304019648318088,
+      "rmse": 0.5748060236565103,
+      "r2": 0.541695522696896,
+      "pcc": 0.747880665990209,
+      "ktc": 0.4958798709758836,
+      "spearman": 0.6641198593837142,
+      "n": 328,
+      "epoch": 74
+    },
+    "best_test": {
+      "mse": 0.3205891747712206,
+      "rmse": 0.5662059473117715,
+      "r2": 0.5553069599711635,
+      "pcc": 0.7511255334753809,
+      "ktc": 0.5032068558768465,
+      "spearman": 0.6678028466732564,
+      "n": 328,
+      "epoch": 87
+    },
+    "n_train": 2652,
+    "n_val": 295,
+    "n_test": 328
+  }
+}

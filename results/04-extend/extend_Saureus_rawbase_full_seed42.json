@@ -1,0 +1,70 @@
+{
+  "args": {
+    "base_ckpt": null,
+    "raw_base": true,
+    "base_organism": "E. coli",
+    "new_organism": "S. aureus",
+    "n_sub": 0,
+    "esm_name": "facebook/esm2_t30_150M_UR50D",
+    "strategy": "length_matched",
+    "neg_pos_ratio": 1.0,
+    "max_len": 64,
+    "batch_size": 16,
+    "epochs": 60,
+    "head_lr": 0.0001,
+    "weight_decay": 0.003,
+    "dropout": 0.2,
+    "grad_clip": 1.0,
+    "val_frac": 0.1,
+    "seed": 42,
+    "out": "extend_Saureus_rawbase_full_seed42.json",
+    "save_ckpt": false,
+    "wandb": false,
+    "wandb_project": "CARP",
+    "wandb_name": null,
+    "wandb_mode": "online"
+  },
+  "result": {
+    "new_organism": {
+      "organism": "S. aureus",
+      "n_sub": 0,
+      "n_train": 2652,
+      "best_val": {
+        "mse": 0.3435863776945205,
+        "rmse": 0.5861624157983182,
+        "r2": 0.4415222416527794,
+        "pcc": 0.676764069454292,
+        "ktc": 0.47812692438325316,
+        "spearman": 0.6655830008507347,
+        "n": 295,
+        "top10_overlap": 0.5,
+        "ndcg10": 0.8648440684205589,
+        "top50_overlap": 0.52,
+        "ndcg50": 0.8850901611265874,
+        "top100_overlap": 0.64,
+        "ndcg100": 0.9003770793670143,
+        "epoch": 46
+      },
+      "test": {
+        "mse": 0.32756875871862723,
+        "rmse": 0.5723362287315273,
+        "r2": 0.5456254964410128,
+        "pcc": 0.7483255846798014,
+        "ktc": 0.5067208180232267,
+        "spearman": 0.6920094885128049,
+        "n": 328,
+        "top10_overlap": 0.6,
+        "ndcg10": 0.9549293315695051,
+        "top50_overlap": 0.52,
+        "ndcg50": 0.9198381429640633,
+        "top100_overlap": 0.66,
+        "ndcg100": 0.9271235784418591
+      }
+    },
+    "forgetting": null,
+    "base_load": {
+      "kind": "raw",
+      "esm_name": "facebook/esm2_t30_150M_UR50D"
+    }
+  }
+}

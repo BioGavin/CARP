@@ -1,0 +1,56 @@
+{
+  "args": {
+    "organism": "E. coli",
+    "model_name": "Rostlab/prot_bert",
+    "epochs": 100,
+    "batch_size": 12,
+    "lr": 1e-05,
+    "weight_decay": 0.003,
+    "dropout": 0.2,
+    "grad_clip": 1.0,
+    "max_len": 77,
+    "val_frac": 0.1,
+    "seed": 2026,
+    "save_ckpt": false,
+    "out": "protbert_EC_seed2026.json",
+    "wandb": false,
+    "wandb_project": "CARP",
+    "wandb_name": null
+  },
+  "result": {
+    "selected_by": "val/mse",
+    "best_val": {
+      "mse": 0.27126444373759145,
+      "rmse": 0.5208305326472243,
+      "r2": 0.5470057322179898,
+      "pcc": 0.7490208170897742,
+      "ktc": 0.549373522903457,
+      "spearman": 0.7244322394494418,
+      "n": 364,
+      "epoch": 64
+    },
+    "test_at_best_val": {
+      "mse": 0.3312230856301723,
+      "rmse": 0.5755198394757319,
+      "r2": 0.5527882509212838,
+      "pcc": 0.7586631890733845,
+      "ktc": 0.5281428200574525,
+      "spearman": 0.6927637228105207,
+      "n": 404,
+      "epoch": 64
+    },
+    "best_test": {
+      "mse": 0.3007411129886732,
+      "rmse": 0.5483986806955986,
+      "r2": 0.5939444893955401,
+      "pcc": 0.776054520580207,
+      "ktc": 0.5438082819339818,
+      "spearman": 0.7119117063360074,
+      "n": 404,
+      "epoch": 65
+    },
+    "n_train": 3274,
+    "n_val": 364,
+    "n_test": 404
+  }
+}
