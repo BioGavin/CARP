@@ -2,6 +2,8 @@
 
 **<u>C</u>lassification <u>A</u>nd organism-specific <u>R</u>egression for antimicrobial <u>P</u>eptides**
 
+![CARP architecture](figure/architecture.png)
+
 ## How to use
 
 The data and the final model (`carp_seed0.pt`) are deposited in Zenodo ([10.5281/zenodo.23226520](https://doi.org/10.5281/zenodo.23226520)). Unzip `dataset.zip` in the repository root, then predict from the repository root:
